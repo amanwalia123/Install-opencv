@@ -35,10 +35,11 @@ Restart your computer
 
 Go to [here](https://developer.nvidia.com/cuDNN) and use the Download button (you have to register and login to download. no way around that.)
 Download cuDNN R3 for Linux. You will download a file cudnn-8.0-linux-x64-v3.0-prod.tgz(or ) then use the commands:
+```
 tar -xvf cudnn-7.0-linux-x64-v3.0-prod.tgz
 sudo cp cuda/include/*.h /usr/local/cuda/include
 sudo cp cuda/lib64/*.so* /usr/local/cuda/lib64
-
+```
 ##### Install OpenCV
 Install opencv now using 
 ```
