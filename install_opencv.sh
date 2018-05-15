@@ -42,7 +42,7 @@ sudo apt-get install -y doxygen
 
 
 sudo apt-get install -y unzip wget
-wget https://github.com/opencv/opencv/archive/2.4.13.zip
+wget https://github.com/opencv/opencv/archive/2.4.13.6.zip
 unzip 2.4.13.6.zip
 rm 2.4.13.6.zip
 mv opencv-2.4.13.6 OpenCV
