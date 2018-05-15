@@ -43,13 +43,13 @@ sudo apt-get install -y doxygen
 
 sudo apt-get install -y unzip wget
 wget https://github.com/opencv/opencv/archive/2.4.13.zip
-unzip 2.4.13.zip
-rm 2.4.13.zip
-mv opencv-2.4.13 OpenCV
+unzip 2.4.13.6.zip
+rm 2.4.13.6.zip
+mv opencv-2.4.13.6 OpenCV
 cd OpenCV
 mkdir build
 cd build
-cmake  -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_OPENGL=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 -D WITH_OPENGL=ON -D FORCE_VTK=ON -D WITH_TBB=ON -D WITH_GDAL=ON -D WITH_CUDA=ON -D WITH_FFMPEG=ON -D WITH_GTK=ON -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-8.0 -D CUDA_ARCH_BIN='3.0 3.5 5.0 6.0 6.2' -D CUDA_ARCH_PTX="" ..
+cmake  -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_OPENGL=ON -D ENABLE_FAST_MATH=1  -D WITH_OPENGL=ON -D FORCE_VTK=ON -D WITH_TBB=ON -D WITH_GDAL=ON -D -D WITH_FFMPEG=ON -D WITH_GTK=ON ..
 make -j8
 sudo make install
 echo '/usr/local/lib' | sudo tee -a /etc/ld.so.conf.d/opencv.conf 
