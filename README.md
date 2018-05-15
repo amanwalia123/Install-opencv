@@ -45,6 +45,15 @@ Install opencv now using
 ```
 sudo bash install_opencv_cuda.sh
 ```
+
+###### Checking if everything works fine
+Run this command to see what it returns
+```
+pkg-config --cflags opencv
+
+```
+It should return something like /usr/..../opencv
+
 ## Authors
 
 * **Amanpreet Walia**
