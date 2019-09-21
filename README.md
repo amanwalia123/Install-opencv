@@ -2,7 +2,7 @@
 I have used following scripts to install opencv on Raspberry Pi, and linux boxes. You may find the provided scripts useful.
 
 ## Getting Started
-Download or clone this repository to your local File System.I have provided two scripts for installation with/without CUDA.Choose the file whivh suits you.
+Download or clone this repository to your local File System.I have provided two scripts for installation with/without CUDA.Choose the file which suits you.
 
 ### Installing
 Move to the folder using
