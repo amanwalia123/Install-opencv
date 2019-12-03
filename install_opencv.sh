@@ -1,10 +1,14 @@
 #!/bin/sh
+
+OPENCV_VER=4.1.1
+
 # KEEP UBUNTU OR DEBIAN UP TO DATE
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
+
 
 
 
@@ -43,19 +47,19 @@ sudo apt-get install -y doxygen
 
 sudo apt-get install -y unzip wget
 #wget https://github.com/opencv/opencv/archive/2.4.13.6.zip
-wget https://github.com/opencv/opencv/archive/3.4.1.zip -O opencv-3.4.1.zip
-wget https://github.com/opencv/opencv_contrib/archive/3.4.1.zip -O opencv_contrib-3.4.1.zip
-unzip opencv-3.4.1.zip
-unzip opencv_contrib-3.4.1.zip
+wget https://github.com/opencv/opencv/archive/${OPENCV_VER}.zip -O opencv-${OPENCV_VER}.zip
+wget https://github.com/opencv/opencv_contrib/archive/${OPENCV_VER}.zip -O opencv_contrib-${OPENCV_VER}.zip
+unzip opencv-${OPENCV_VER}.zip
+unzip opencv_contrib-${OPENCV_VER}.zip
 #rm 2.4.13.6.zip
-rm opencv-3.4.1.zip opencv_contrib-3.4.1.zip
-mv opencv-3.4.1 OpenCV
-mv opencv_contrib-3.4.1 OpenCV/
+rm opencv-${OPENCV_VER}.zip opencv_contrib-${OPENCV_VER}.zip
+mv opencv-${OPENCV_VER} OpenCV
+mv opencv_contrib-${OPENCV_VER} OpenCV/
 cd OpenCV
 mkdir build
 cd build
 cmake  -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_OPENGL=ON -D ENABLE_FAST_MATH=1  -D WITH_OPENGL=ON -D FORCE_VTK=ON -D WITH_TBB=ON -D WITH_GDAL=ON -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-3.4.1/modules -D WITH_FFMPEG=ON -D WITH_GTK=ON -D WITH_CUDA=OFF ..
-make -j8
+make -j16
 sudo make install
 echo '/usr/local/lib' | sudo tee -a /etc/ld.so.conf.d/opencv.conf 
 sudo ldconfig
